@@ -19,18 +19,131 @@
                 <footer>Background Image and Logo Created with DALL·E</footer>
             </div>
         </div>
-        <div>
+        <div class="formContainer">
             <div>
-                <p>At Neon Noir Investigations, we navigate the shadowy crossroads of technology and crime, where the digital and the physical intertwine. Our expertise lies in uncovering truths hidden deep within the cybernetic sprawl of the city. With cutting-edge tech and old-school grit, we're your eyes in the dark.</p>
+                <p>At Neon Noir Investigations, we navigate the shadowy crossroads of technology and crime, where the digital and the physical intertwine. 
+                    Our expertise lies in uncovering truths hidden deep within the cybernetic sprawl of the city. 
+                    With cutting-edge tech and old-school grit, we're your eyes in the dark. 
+                    Whether you're up against corporate espionage, digital footprints, or the intricate puzzles of the human mind, we're here to bring your case into the clear, neon light of justice. 
+                    Dive into the future of private investigation with us—where the truth is never out of sight.
+                </p>
+                <p>
+                    Fill out the form below to request a free consultation.
+                </p>
             </div>
             <div>
-                <div>
-                    <form action="" method="post"></form>
-                </div>
-                <div>
-                    <button></button>
-                    <p></p>
-                </div>
+                <form action="/my-handling-form-page" method="post">
+                    <p>
+                        Required fields are followed by
+                        <span aria-label="required">*</span>
+                    </p>
+                    <section>
+                        <h2>Contact information</h2>
+                        <fieldset>
+                            <legend>Do you want to create an account</legend>
+                            <ul>
+                                <li>
+                                    <label for="acct">
+                                        <input type="radio" id="acct" name="acct/no/anon" value="acct" checked />
+                                        Create an Account
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="no">
+                                        <input type="radio" id="no" name="acct/no/anon" value="no" />
+                                        Not at this time
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="anon">
+                                        <input type="radio" id="anon" name="acct/no/anon" value="anon" />
+                                        Stay anonymous
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <p>
+                            <label for="name">
+                                <span>Name: </span>
+                                <span aria-label="required">*</span>
+                            </label>
+                            <input spellcheck="true" type="text" id="name" name="username" required />
+                        </p>
+                        <p>
+                            <label for="mail">
+                                <span>Email: </span>
+                                <span aria-label="required">*</span>
+                            </label>
+                            <input type="email" id="mail" name="usermail" required placeholder="case@neuromancer.net" />
+                        </p>
+                        <p>
+                            <label for="phone">
+                                <span>Phone number:</span>
+                                <span aria-label="required">*</span>
+                            </label>
+                            <input
+                            type="tel"
+                            id="phone"
+                            required
+                            placeholder="XXX-XXX-XXXX"
+                            pattern="^\(\d{3}\)\s\d{3}-\d{4}$" />
+                        </p>
+                        <p>
+                            <label for="pwd">
+                                <span>Password: </span>
+                                <span aria-label="required">*</span>
+                            </label>
+                            <input type="password" id="pwd" name="password" required />
+                        </p>
+                        <p>
+                            <label for="conPwd">
+                                <span>Confirm Password: </span>
+                                <span aria-label="required">*</span>
+                            </label>
+                            <input type="password" id="conPwd" name="confirmPassword" required />
+                        </p>
+                        <p>
+                            <label for="conMethod">
+                                <span>Preferred Contact Method:</span>
+                            </label>
+                            <select id="conMethod" name="conMethod">
+                                <option value="phone">Phone</option>
+                                <option value="email">Email</option>
+                                <option value="link">Link</option>
+                            </select>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Services Requested</h2>
+                        <fieldset>
+                            <legend>Check all that apply</legend>
+                            <ul>
+                                <li>
+                                    <label for="title_1">
+                                        <input type="checkbox" id="title_1" name="title" value="A" checked />
+                                        Ace
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="title_2">
+                                        <input type="checkbox" id="title_2" name="title" value="K" />
+                                        King
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="title_3">
+                                        <input type="checkbox" id="title_3" name="title" value="Q" />
+                                        Queen
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Extra Details</legend>
+                            <textarea name="exDetails" id="exDetails" cols="30" rows="10"></textarea>
+                        </fieldset>
+                    </section>
+                </form>
             </div>
         </div>
     </div>

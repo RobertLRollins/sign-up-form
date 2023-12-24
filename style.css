@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 :root {
     font-size: 16px;
+    --darkest-green: #0E2425;
+    --darker-green: #123631;
+    --dark-green: #23564B;
+    --light-green: #4E826F;
+    --lighter-green: #7EB69A;
+    --lightest-green: #DEECCD;
+    --burnt-orange: #A56144;
+    --hero-gray: rgba(49, 49, 49, 0.50);
 }
 
 body {
@@ -13,7 +21,7 @@ body {
 }
 
 .hero {
-    width: max(50%, 1500px);
+    width: max(50%, 3000px);
     height: 100vh;
     background-image: url('bg.png');
     background-position: center center;
@@ -27,7 +35,7 @@ body {
 }
 
 .logo {
-    background-color: rgba(49, 49, 49, 0.50);
+    background-color: var(--hero-gray);
     margin-top: 20vh;
     display: flex;
     align-items: center;
@@ -44,8 +52,9 @@ h1 {
     margin-right: 2.6rem;
     margin-left: -2rem;
 }
+
 .footerDiv {
-    background-color: rgba(49, 49, 49, 0.50);  
+    background-color: var(--hero-gray);  
     padding: .75rem;
     display: flex;
     align-items: center;
@@ -53,4 +62,9 @@ h1 {
     width: 100%;
     box-sizing: border-box;
     font-size: min(90%, 1rem);
+}
+
+.formContainer {
+    background-color: var(--dark-green);
+    color: var(--lightest-green);
 }
