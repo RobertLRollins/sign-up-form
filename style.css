@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 :root {
-    font-size: 16px;
     --darkest-green: #0E2425;
     --darker-green: #123631;
     --dark-green: #23564B;
@@ -18,10 +17,11 @@ body {
 
 .container {
     display: flex;
+    position: relative;
 }
 
 .hero {
-    width: max(50%, 3000px);
+    width: max(50%, 4000px);
     height: 100vh;
     background-image: url('bg.png');
     background-position: center center;
@@ -32,6 +32,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
 
 .logo {
@@ -48,7 +50,9 @@ body {
 }
 
 h1 {
-    font-size: 6rem;
+    font-size: 9rem;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-right: 2.6rem;
     margin-left: -2rem;
 }
@@ -67,4 +71,53 @@ h1 {
 .formContainer {
     background-color: var(--dark-green);
     color: var(--lightest-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    align-self: center;
+}
+
+.contactInfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.serviceRequest {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: var(--darkest-green);
+    color: var(--lightest-green);
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+   
+    /* Position the tooltip text*/
+    position: absolute;
+    right: 100%;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.9;
 }
