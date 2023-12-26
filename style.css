@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 :root {
     --darkest-green: #0E2425;
@@ -8,11 +9,19 @@
     --lightest-green: #DEECCD;
     --burnt-orange: #A56144;
     --hero-gray: rgba(15, 36, 37, 0.5);
+    font-size: 1.75vh;
+}
+
+p,
+legend,
+li {
+    font-size: 1.25rem;
 }
 
 body {
     margin: 0;
     font-family: 'Audiowide', 'Lucida Console', monospace;
+    color: var(--lightest-green);
 }
 
 .container {
@@ -21,31 +30,41 @@ body {
 }
 
 .hero {
-    width: max(50%, 4000px);
+    width: 40%;
     height: 100vh;
     background-image: url('bg.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    box-shadow: inset -30px 0px 30px -12px var(--darkest-green);
-    
+    box-shadow: inset -30px 0px 30px -12px black;
+}
+
+.heroTop{
+    background-color: var(--hero-gray);
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0px 0px 10px 10px var(--hero-gray);
+}
+
+.heroAbout {
+    margin: 0 2rem;
 }
 
 .logo {
-    background-color: var(--hero-gray);
-    margin-top: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    box-shadow: inset 0px 0px 10px 10px var(--hero-gray), 0px 0px 10px 10px var(--hero-gray);
 }
 
 .logoImg {
@@ -53,11 +72,17 @@ body {
 }
 
 h1 {
-    font-size: 9rem;
+    font-size: 6rem;
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 2.6rem;
     margin-left: -2rem;
+}
+
+.formTop {
+    font-size: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
 }
 
 .footerDiv {
@@ -69,10 +94,13 @@ h1 {
     width: 100%;
     box-sizing: border-box;
     font-size: min(90%, 1rem);
-    box-shadow: inset 0px 0px 10px 10px var(--hero-gray), 0px 0px 10px 10px var(--hero-gray);
+    box-shadow: 0px 0px 10px 10px var(--hero-gray);
 }
 
 .formContainer {
+    width: 60%;
+    min-height: 110vh;
+    max-height: none;
     background-image: url('border.png');
     background-position: center center;
     background-repeat: repeat;
@@ -93,7 +121,7 @@ h1 {
     bottom: 0;
     left: 0;
     background: var(--hero-gray);
-    box-shadow: inset 30px 0px 30px -12px var(--darkest-green);
+    box-shadow: inset 0px 0px 90px 0px black;
 }
 
 .formContainer * {
@@ -105,6 +133,15 @@ h1 {
     display: flex;
     flex-direction: column; 
 }
+
+.required {
+    margin: -1rem 0 1rem 1rem;
+}
+
+.note {
+    margin: -1rem 0 0rem 0;
+}
+
 
 button {
     align-self: center;
@@ -127,7 +164,14 @@ button {
 
 .serviceRequest {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.services {
+    display: flex;
+    justify-content: space-evenly;
     align-items: flex-start;
 }
 
@@ -154,4 +198,31 @@ button {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 0.9;
+}
+
+button {
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 3px solid var(--burnt-orange);
+    background-color: var(--burnt-orange);
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+    color: var(--darkest-green);
+    border-radius: 3px;
+    box-shadow: 0 3px 5px var(--darkest-green);
+    padding: 0.25rem 0.75rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--lighter-green);
+    border: 3px solid var(--lighter-green);
+}
+
+button:active {
+    background-color: var(--burnt-orange);
+    border: 3px solid var(--burnt-orange);
 }

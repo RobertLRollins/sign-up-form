@@ -11,9 +11,19 @@
 <body>
     <div class="container">
         <div class="hero">
-            <div class="logo">
-                <img class="logoImg" src="logo.png" alt="Private Eye">
-                <h1>NNI</h1>
+            <div class="heroTop">
+                <div class="logo">
+                    <img class="logoImg" src="logo.png" alt="Private Eye">
+                    <h1>NNI</h1>
+                </div>
+                <div class="heroAbout">
+                    <p>At Neon Noir Investigations, we navigate the shadowy crossroads of technology and crime, where the digital and the physical intertwine.
+                        Our expertise lies in uncovering truths hidden deep within the cybernetic sprawl of the city.
+                        With cutting-edge tech and old-school grit, we're your eyes in the dark.
+                        Whether you're up against corporate espionage, digital footprints, or the intricate puzzles of the human mind, we're here to bring your case into the clear, neon light of justice.
+                        Dive into the future of private investigation with us—where the truth is never out of sight.
+                    </p>
+                </div>
             </div>
             <div class="footerDiv">
                 <footer>Background Images and Logo Created with DALL·E</footer>
@@ -21,27 +31,21 @@
         </div>
         <div class="formContainer">
             <div>
-                <p>At Neon Noir Investigations, we navigate the shadowy crossroads of technology and crime, where the digital and the physical intertwine. 
-                    Our expertise lies in uncovering truths hidden deep within the cybernetic sprawl of the city. 
-                    With cutting-edge tech and old-school grit, we're your eyes in the dark. 
-                    Whether you're up against corporate espionage, digital footprints, or the intricate puzzles of the human mind, we're here to bring your case into the clear, neon light of justice. 
-                    Dive into the future of private investigation with us—where the truth is never out of sight.
-                </p>
-                <p>
+                <h2 class="formTop">
                     Fill out the form below to request a free consultation.
-                </p>
+                </h2>
             </div>
             <div class="form">
                 <form class="form" action="" method="post">
-                    <p>
-                        Required fields are followed by
-                        <span aria-label="required">*</span>
-                    </p>
                     <section>
                         <fieldset class="conBorder">
                             <legend>
                                 <h2>Contact Information</h2>
                             </legend>
+                            <p class="required">
+                                Required fields are followed by
+                                <span aria-label="required">*</span>
+                            </p>
                             <div class="contactInfo">
                                 <fieldset class="conBorder">
                                     <legend>Do you want to create an account</legend>
@@ -149,9 +153,9 @@
                                 <h2>Services Requested</h2>
                             </legend>
                             <div class="serviceRequest">
-                                <fieldset class="conBorder">
-                                    <legend>Check all that apply</legend>
-                                    <ul>
+                                <p class="note">Check all that apply</p>
+                                <ul class="services">
+                                    <div>
                                         <li>
                                             <label class="tooltip" for="option_1">
                                                 <input type="checkbox" id="option_1" name="title" value="1" />
@@ -194,6 +198,8 @@
                                                 <span class="tooltiptext">Tracking and retrieving stolen cybernetic enhancements or high-value digital assets through both the physical and virtual worlds.</span>
                                             </label>
                                         </li>
+                                    </div>
+                                    <div>
                                         <li>
                                             <label class="tooltip" for="option_7">
                                                 <input type="checkbox" id="option_7" name="title" value="7" />
@@ -236,12 +242,8 @@
                                                 <span class="tooltiptext">Providing information on illegal tech, contraband, and the movers and shakers in the underground market.</span>
                                             </label>
                                         </li>
-                                    </ul>
-                                </fieldset>
-                                <fieldset class="conBorder">
-                                    <legend>Additional Details</legend>
-                                    <textarea spellcheck="true" name="exDetails" id="exDetails" cols="40" rows="18"></textarea>
-                                </fieldset>
+                                    </div>
+                                </ul>
                             </div>
                         </fieldset>
                     </section>
