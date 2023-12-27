@@ -14,7 +14,7 @@
             <div class="heroTop">
                 <div class="heroLogo">
                     <img class="logoImg" src="logo.png" alt="Private Eye">
-                    <h1 class="heroTitle">NNI</h1>
+                    <h1 class="logoText">NNI</h1>
                 </div>
                 <div class="heroAbout">
                     <p>At Neon Noir Investigations, we navigate the shadowy crossroads of technology and crime, where the digital and the physical intertwine.
@@ -74,6 +74,7 @@
                                             <span>User Name: </span>
                                             <span aria-label="required">*</span>
                                         </label>
+                                        <br>
                                         <input spellcheck="true" type="text" id="userName" name="userName" required />
                                     </p>
                                     <p>
@@ -81,13 +82,15 @@
                                             <span>Password: </span>
                                             <span aria-label="required">*</span>
                                         </label>
+                                        <br>
                                         <input type="password" id="pwd" name="password" required />
                                     </p>
                                     <p>
-                                        <label for="conPwd">
+                                        <label for="confirmPwd">
                                             <span>Confirm Password: </span>
                                             <span aria-label="required">*</span>
                                         </label>
+                                        <br>
                                         <input type="password" id="conPwd" name="confirmPassword" required />
                                     </p>
                                 </fieldset>
@@ -95,12 +98,13 @@
                                     <legend>Contact Information</legend>
                                     <div>
                                         <p>
-                                            <label for="conMethod">
+                                            <label for="preferred">
                                                 <span>Preferred Contact Method:</span>
                                             </label>
-                                            <select id="conMethod" name="conMethod">
+                                            <br>
+                                            <select id="preferred" name="preferred">
                                                 <option value="email">Email</option>
-                                                <option value="vell">Cell</option>
+                                                <option value="cell">Cell</option>
                                                 <option value="link">Neuralink</option>
                                             </select>
                                         </p>
@@ -109,6 +113,7 @@
                                                 <span>Name: </span>
                                                 <span aria-label="required">*</span>
                                             </label>
+                                            <br>
                                             <input spellcheck="false" type="text" id="name" name="name" required />
                                         </p>
                                         <p>
@@ -116,6 +121,7 @@
                                                 <span>Email: </span>
                                                 <span aria-label="required">*</span>
                                             </label>
+                                            <br>
                                             <input type="email" id="email" name="email" required placeholder="case@neuromancer.net" />
                                         </p>
                                         <p>
@@ -123,6 +129,7 @@
                                                 <span>Cell Number:</span>
                                                 <span aria-label="required">*</span>
                                             </label>
+                                            <br>
                                             <input
                                             type="tel"
                                             id="cell"
@@ -135,6 +142,7 @@
                                                 <span>Neuralink Code:</span>
                                                 <span aria-label="required">*</span>
                                             </label>
+                                            <br>
                                             <input
                                             type="tel"
                                             id="neuralink"
@@ -236,7 +244,7 @@
                                             </label>
                                         </li>
                                         <li>
-                                            <label class="toolip" for="option_12">
+                                            <label class="tooltip" for="option_12">
                                                 <input type="checkbox" id="option_12" name="title" value="12" />
                                                 Black Market Intelligence
                                                 <span class="tooltipText">Providing information on illegal tech, contraband, and the movers and shakers in the underground market.</span>

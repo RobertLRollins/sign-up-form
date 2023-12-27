@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+:root {
+    --darkest-green: #0E2425;
+    --darker-green: #123631;
+    --dark-green: #23564B;
+    --light-green: #4E826F;
+    --lighter-green: #7EB69A;
+    --lightest-green: #DEECCD;
+    --burnt-orange: #A56144;
+    --hero-gray: rgba(15, 36, 37, 0.5);
+}
+
+body {
+    margin: 0;
+    font-family: 'Audiowide', 'Lucida Console', monospace;
+    color: var(--lightest-green);
+    background-color: var(--darker-green);
+}
+
+.container {
+    display: flex;
+    position: relative;
+}
+
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+    background-image: url('bg2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heroTop {
+    
+}
+
+.heroLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImg {
+    width: 15rem;
+    margin-left: -3rem;
+}
+
+.logoText {
+    font-size: 6rem;
+    margin-left: -3rem;
+}
+
+.heroAbout {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.formContainer {
+    min-width: 30rem;
+}
+
+.fieldset {
+    border: solid;
+    border-image-source: url(border.png);
+    border-image-slice: 50 60 50 60;
+    border-image-width: 10px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch stretch;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltipText {
+    visibility: hidden;
+    width: 300px;
+    background-color: var(--darkest-green);
+    color: var(--lightest-green);
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+   
+    /* Position the tooltip text*/
+    position: absolute;
+    right: 100%;
+}
+  
+.tooltip:hover .tooltipText {
+    visibility: visible;
+    opacity: 0.9;
+}
