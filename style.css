@@ -7,7 +7,8 @@
     --lighter-green: #7EB69A;
     --lightest-green: #DEECCD;
     --burnt-orange: #A56144;
-    --hero-gray: rgba(15, 36, 37, 0.5);
+    --hero-gray: rgba(0, 0, 0, 0.75);
+    --form-gray: rgba(0, 0, 0, 0.75);
 }
 
 body {
@@ -36,8 +37,26 @@ body {
     background-size: cover;
 }
 
+.heroContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--hero-gray);
+    box-shadow: inset 0px 0px 60px 60px black;
+}
+
 .heroTop {
-    
+    position: relative;
+    z-index: 1;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .heroLogo {
@@ -47,25 +66,54 @@ body {
 }
 
 .logoImg {
-    width: 15rem;
+    width: 20rem;
     margin-left: -3rem;
 }
 
 .logoText {
-    font-size: 6rem;
+    font-size: 9rem;
     margin-left: -3rem;
 }
 
 .heroAbout {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    font-size: 1.5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.heroFooter {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .formContainer {
     min-width: 30rem;
+    padding: 1rem;
+    box-shadow: inset 0px 0px 60px 60px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('bg3.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.fieldset {
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.border {
     border: solid;
     border-image-source: url(border.png);
     border-image-slice: 50 60 50 60;
@@ -74,8 +122,58 @@ body {
     border-image-repeat: stretch stretch;
 }
 
+.tint {
+    background-color: var(--form-gray);
+}
+
+.innerFieldset {
+    margin: 0 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(.2rem);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--light-green);
+
+    /* checkmark */
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
 .tooltip {
-    position: relative;
+    position: relative; 
+
+    /*For Checkbox Style*/
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
 }
 
 .tooltip .tooltipText {
@@ -97,4 +195,41 @@ body {
 .tooltip:hover .tooltipText {
     visibility: visible;
     opacity: 0.9;
+}
+
+.button {
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--burnt-orange);
+    color: var(--darkest-green);
+    border-radius: 1px;
+    box-shadow: 0 3px 5px var(--hero-gray);
+    padding: 0.25rem 0.75rem;
+    text-align: center;
+    line-height: 1.1;
+
+    transition: 220ms all ease-in-out;
+    &:hover,
+    &:hover {
+        background-color: var(--lightest-green);
+    }
+
+    &:focus {
+        outline-style: solid;
+        outline-color: transparent;
+        box-shadow: var(--lightest-green);
+    }
+
+    /* Button border for users with Windows High Contrast mode enabled*/
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentcolor;
+    }
 }
