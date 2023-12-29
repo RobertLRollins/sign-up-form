@@ -51,19 +51,19 @@
                                     <legend><h3>Create an account?</h3></legend>
                                     <ul>
                                         <li>
-                                            <label for="acct">
+                                            <label class="radio" for="acct">
                                                 <input type="radio" id="acct" name="acct/no/anon" value="acct" checked />
                                                 Create an account
                                             </label>
                                         </li>
                                         <li>
-                                            <label for="no">
+                                            <label class="radio" for="no">
                                                 <input type="radio" id="no" name="acct/no/anon" value="no" />
                                                 Not at this time
                                             </label>
                                         </li>
                                         <li>
-                                            <label for="anon">
+                                            <label class="radio" for="anon">
                                                 <input type="radio" id="anon" name="acct/no/anon" value="anon" />
                                                 Stay anonymous
                                             </label>
@@ -75,7 +75,7 @@
                                             <span aria-label="required">*</span>
                                         </label>
                                         <br>
-                                        <input spellcheck="true" type="text" id="userName" name="userName" required />
+                                        <input class="text" spellcheck="true" type="text" id="userName" name="userName" required />
                                     </p>
                                     <p>
                                         <label for="pwd">
@@ -83,7 +83,7 @@
                                             <span aria-label="required">*</span>
                                         </label>
                                         <br>
-                                        <input type="password" id="pwd" name="password" required />
+                                        <input class="text" type="password" id="pwd" name="password" required />
                                     </p>
                                     <p>
                                         <label for="confirmPwd">
@@ -91,7 +91,7 @@
                                             <span aria-label="required">*</span>
                                         </label>
                                         <br>
-                                        <input type="password" id="conPwd" name="confirmPassword" required />
+                                        <input class="text" type="password" id="conPwd" name="confirmPassword" required />
                                     </p>
                                 </fieldset>
                                 <fieldset class="border innerFieldset">
@@ -102,11 +102,13 @@
                                                 <span>Preferred Contact Method:</span>
                                             </label>
                                             <br>
-                                            <select id="preferred" name="preferred">
-                                                <option value="email">Email</option>
-                                                <option value="cell">Cell</option>
-                                                <option value="link">Neuralink</option>
-                                            </select>
+                                            <div class="select">
+                                                <select id="preferred" name="preferred">
+                                                    <option value="email">Email</option>
+                                                    <option value="cell">Cell</option>
+                                                    <option value="link">Neuralink</option>
+                                                </select>
+                                            </div>
                                         </p>
                                         <p>
                                             <label for="name">
@@ -114,7 +116,7 @@
                                                 <span aria-label="required">*</span>
                                             </label>
                                             <br>
-                                            <input spellcheck="false" type="text" id="name" name="name" required />
+                                            <input class="text" spellcheck="false" type="text" id="name" name="name" required />
                                         </p>
                                         <p>
                                             <label for="email">
@@ -122,7 +124,7 @@
                                                 <span aria-label="required">*</span>
                                             </label>
                                             <br>
-                                            <input type="email" id="email" name="email" required placeholder="case@neuromancer.net" />
+                                            <input class="text" type="email" id="email" name="email" required placeholder="case@neuromancer.net" />
                                         </p>
                                         <p>
                                             <label for="cell">
@@ -131,6 +133,7 @@
                                             </label>
                                             <br>
                                             <input
+                                            class="text"
                                             type="tel"
                                             id="cell"
                                             required
@@ -144,6 +147,7 @@
                                             </label>
                                             <br>
                                             <input
+                                            class="text"
                                             type="tel"
                                             id="neuralink"
                                             required

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 :root {
     --darkest-green: #0E2425;
     --darker-green: #123631;
@@ -7,13 +8,14 @@
     --lighter-green: #7EB69A;
     --lightest-green: #DEECCD;
     --burnt-orange: #A56144;
-    --hero-gray: rgba(0, 0, 0, 0.75);
+    --hero-gray: rgba(0, 0, 0, 0.65);
     --form-gray: rgba(0, 0, 0, 0.75);
 }
 
 body {
     margin: 0;
-    font-family: 'Audiowide', 'Lucida Console', monospace;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1rem;
     color: var(--lightest-green);
     background-color: var(--darker-green);
 }
@@ -71,6 +73,7 @@ body {
 }
 
 .logoText {
+    font-family: 'Audiowide', 'Lucida Console', monospace;
     font-size: 9rem;
     margin-left: -3rem;
 }
@@ -86,7 +89,6 @@ body {
     z-index: 1;
     box-sizing: border-box;
     padding: 1rem;
-    margin-top: 5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,6 +109,11 @@ body {
     background-size: cover;
 }
 
+.formTitle {
+    margin: 2rem 2rem 0;
+    text-align: center;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -120,18 +127,123 @@ body {
     border-image-width: 10px;
     border-image-outset: 0px;
     border-image-repeat: stretch stretch;
-}
+}   
 
 .tint {
     background-color: var(--form-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .innerFieldset {
-    margin: 0 1rem;
+    margin: 0 2rem 1rem;
 }
 
 ul {
     list-style-type: none;
+}
+
+.radio {
+    display: grid;
+    grid-template-columns: 1rem auto;
+    gap: 0.5rem;
+    margin: 0 1rem 0 -1.5rem;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 0.15rem solid currentColor;
+    border-radius: 50%;
+    transform: translateY(0.1rem);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1rem 1rem var(--light-green);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.text {
+    font-family: inherit;
+    padding: 0.25rem 0.5rem;
+    background-color: #fff;
+    border: 2px solid var(--light-green);
+    border-radius: 0.15rem;
+    width: 90%;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1rem 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    grid-area: select;
+}
+
+.select {
+    width: 90%;
+    max-width: 30ch;
+    border: 2px solid var(--light-green);
+    border-radius: 0.15rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: var(--lightest-green);
+    background-image: linear-gradient(to top, var(--lightest-green), white 75%);
+
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+}
+
+.select::after {
+    content: "";
+    width: 0.8rem;
+    height: 0.5rem;
+    background-color: var(--light-green);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    grid-area: select;
+    justify-self: end;
+}
+
+.serviceRequest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formSectionNote {
+    margin: 0;
+}
+
+li {
+    margin: .5rem;
 }
 
 input[type="checkbox"] {
@@ -140,23 +252,24 @@ input[type="checkbox"] {
     margin: 0;
     font: inherit;
     color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 0.15em;
-    transform: translateY(.2rem);
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 0.15rem solid currentColor;
+    border-radius: 0.15rem;
+    transform: translateY(0.1rem);
 
     display: grid;
     place-content: center;
+
 }
 
 input[type="checkbox"]::before {
     content: "";
-    width: 0.65em;
-    height: 0.65em;
+    width: 0.65rem;
+    height: 0.65rem;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--light-green);
+    box-shadow: inset 1rem 1rem var(--light-green);
 
     /* checkmark */
     transform-origin: bottom left;
@@ -172,20 +285,21 @@ input[type="checkbox"]:checked::before {
 
     /*For Checkbox Style*/
     display: grid;
-    grid-template-columns: 1em auto;
-    gap: 0.5em;
+    grid-template-columns: 1rem auto;
+    gap: 0.5rem;
+    margin: 0 1rem 0 -1rem;
 }
 
 .tooltip .tooltipText {
     visibility: hidden;
     width: 300px;
-    background-color: var(--darkest-green);
+    background-color: var(--form-gray);
     color: var(--lightest-green);
     opacity: 0;
     transition: opacity 1s;
     text-align: center;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 0.15rem;
    
     /* Position the tooltip text*/
     position: absolute;
@@ -202,6 +316,7 @@ input[type="checkbox"]:checked::before {
     border: none;
     background-color: transparent;
     font-family: inherit;
+    font-size: 1.5rem;
     padding: 0;
     margin-top: 1rem;
     cursor: pointer;
@@ -210,7 +325,7 @@ input[type="checkbox"]:checked::before {
     justify-content: center;
     background-color: var(--burnt-orange);
     color: var(--darkest-green);
-    border-radius: 1px;
+    border-radius: 0.15rem;
     box-shadow: 0 3px 5px var(--hero-gray);
     padding: 0.25rem 0.75rem;
     text-align: center;
@@ -227,9 +342,14 @@ input[type="checkbox"]:checked::before {
         outline-color: transparent;
         box-shadow: var(--lightest-green);
     }
+}
 
-    /* Button border for users with Windows High Contrast mode enabled*/
-    @media screen and (-ms-high-contrast: active) {
-        border: 2px solid currentcolor;
-    }
+a:link {
+    color: var(--burnt-orange);
+    background-color: transparent;
+}
+
+a:visited {
+    color: var(--burnt-orange);
+    background-color: transparent;
 }
