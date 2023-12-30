@@ -8,8 +8,12 @@
     --lighter-green: #7EB69A;
     --lightest-green: #DEECCD;
     --burnt-orange: #A56144;
+    --error-red: #DC143C;
     --hero-gray: rgba(0, 0, 0, 0.65);
-    --form-gray: rgba(0, 0, 0, 0.75);
+    --form-gray: rgba(0, 0, 0, 0.65);
+    --input-focus-h: 87;
+    --input-focus-s: 45%;
+    --input-focus-l: 86%;
 }
 
 body {
@@ -47,7 +51,7 @@ body {
     bottom: 0;
     left: 0;
     background: var(--hero-gray);
-    box-shadow: inset 0px 0px 60px 60px black;
+    box-shadow: inset 0px 0px 50px 15px black;
 }
 
 .heroTop {
@@ -79,7 +83,7 @@ body {
 }
 
 .heroAbout {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-left: 10rem;
     margin-right: 10rem;
 }
@@ -137,11 +141,15 @@ body {
 }
 
 .innerFieldset {
-    margin: 0 2rem 1rem;
+    margin: 0 2.1rem 1rem;
 }
 
 ul {
     list-style-type: none;
+}
+
+.innerTopInput{
+    margin: -1rem 0 0 0;
 }
 
 .radio {
@@ -181,6 +189,11 @@ input[type="radio"]:checked::before {
     transform: scale(1);
 }
 
+input[type="radio"]:hover{
+    border: 0.15rem solid var(--burnt-orange);
+}
+
+
 .text {
     font-family: inherit;
     padding: 0.25rem 0.5rem;
@@ -188,6 +201,17 @@ input[type="radio"]:checked::before {
     border: 2px solid var(--light-green);
     border-radius: 0.15rem;
     width: 90%;
+    transition: 180ms box-shadow ease-in-out;
+}
+
+.text:hover {
+    border-color: var(--burnt-orange);
+}
+
+.text:focus {
+    box-shadow: 0 0 0 2px hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l) +
+          40%), 0.8);
+    outline: 3px solid transparent;
 }
 
 select {
@@ -229,6 +253,14 @@ select {
     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     grid-area: select;
     justify-self: end;
+}
+
+.select:hover {
+    border: 2px solid var(--burnt-orange);
+}
+
+.select:hover::after {
+    background-color: var(--burnt-orange);
 }
 
 .serviceRequest {
@@ -278,6 +310,10 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
     transform: scale(1);
+}
+
+input[type="checkbox"]:hover {
+    border: 0.15rem solid var(--burnt-orange);
 }
 
 .tooltip {
@@ -332,7 +368,7 @@ input[type="checkbox"]:checked::before {
     line-height: 1.1;
 
     transition: 220ms all ease-in-out;
-    &:hover,
+    
     &:hover {
         background-color: var(--lightest-green);
     }
@@ -352,4 +388,9 @@ a:link {
 a:visited {
     color: var(--burnt-orange);
     background-color: transparent;
+}
+
+.error {
+    border: 3px solid var(--error-red);
+    color: var(--error-red);
 }
