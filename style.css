@@ -391,6 +391,6 @@ a:visited {
 }
 
 .error {
-    border: 3px solid var(--error-red);
+    border: 2px solid var(--error-red);
     color: var(--error-red);
 }
