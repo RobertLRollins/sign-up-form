@@ -1,4 +1,3 @@
-//when an input gets disabled add the disabbled class to it
 let inputs = document.getElementsByClassName('text');
 let inputsArray = Array.from(inputs);
 
