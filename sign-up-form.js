@@ -2,19 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Collect all input elements with class 'text' and convert to an array for easy iteration
     let inputs = document.getElementsByClassName('text');
     let inputsArray = Array.from(inputs);
-
-    // Select various elements by their ID for later use
-    let pwdInput = document.getElementById('pwd');
-    let confirmPwdInput = document.getElementById('conPwd');
-    let userNameInput = document.getElementById('userName');
-    let nameInput = document.getElementById('name');
-    let emailInput = document.getElementById('email');
-    let cellInput = document.getElementById('cell');
-    let neuralinkInput = document.getElementById('neuralink');
-    let preferredSelect = document.getElementById('preferred');
-    let acctRadio = document.getElementById('acct');
-    let noRadio = document.getElementById('no');
-    let anonRadio = document.getElementById('anon');
     
     // Add blur and focus event listeners to each input field
     inputsArray.forEach(function(inputField) {
@@ -48,6 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Select various elements by their ID
+    let pwdInput = document.getElementById('pwd');
+    let confirmPwdInput = document.getElementById('conPwd');
+    let userNameInput = document.getElementById('userName');
+    let nameInput = document.getElementById('name');
+    let emailInput = document.getElementById('email');
+    let cellInput = document.getElementById('cell');
+    let neuralinkInput = document.getElementById('neuralink');
+    let preferredSelect = document.getElementById('preferred');
+    let acctRadio = document.getElementById('acct');
+    let noRadio = document.getElementById('no');
+    let anonRadio = document.getElementById('anon');
+    
     // Function to validate that the passwords match
     function validatePasswords() {
         if(!pwdInput.value.trim() || !confirmPwdInput.value.trim()) {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Attach blur event to password fields for validation
     pwdInput.addEventListener('blur', validatePasswords);
     confirmPwdInput.addEventListener('blur', validatePasswords);
-
+    
     // Function to reset all inputs to their original state
     function resetToOriginal() {
         [userNameInput, pwdInput, confirmPwdInput, nameInput, emailInput, cellInput, neuralinkInput].forEach(input => {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             input.parentNode.querySelector('span[aria-label="required"]').style.display = 'inline';
         }
     }
-
+    
     // Function to disable unselected contact methods based on preferred selection
     function disableUnselectedContactMethods() {
         [emailInput, cellInput, neuralinkInput].forEach(disableInput);
